@@ -69,6 +69,27 @@
           "requestVariables": [],
           "responses": {},
           "_ref_id": "req_mgqekq6e_545e33bd-b23e-4b78-8d15-a2d78ba972f4"
+        },
+        {
+          "v": "16",
+          "endpoint": "http://localhost:8080/roles/get/1",
+          "name": "Get Role",
+          "params": [],
+          "headers": [],
+          "method": "GET",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "_ref_id": "req_mgqil23a_7d79f3ce-0ceb-4f6a-a6c2-5994ca698d33"
         }
       ],
       "auth": {
@@ -146,6 +167,27 @@
           "requestVariables": [],
           "responses": {},
           "_ref_id": "req_mgqi76q7_e46deb25-0cfa-4c85-9fc2-8887a74add05"
+        },
+        {
+          "v": "16",
+          "endpoint": "http://localhost:8080/users/get/1",
+          "name": "Get User",
+          "params": [],
+          "headers": [],
+          "method": "GET",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "_ref_id": "req_mgqil23a_7d79f3ce-0ceb-4f6a-a6c2-5994ca698d33"
         }
       ],
       "auth": {
@@ -155,6 +197,104 @@
       "headers": [],
       "variables": [],
       "_ref_id": "coll_mgqf56m8_fe867803-16c8-4386-b302-257a353b95ff"
+    },
+    {
+      "v": 10,
+      "name": "Task",
+      "folders": [],
+      "requests": [
+        {
+          "v": "16",
+          "endpoint": "http://localhost:8080/task/add",
+          "name": "Add Task",
+          "params": [],
+          "headers": [],
+          "method": "POST",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Design Landing Page\",\n  \"description\": \"Create a responsive landing page for the new product launch.\",\n  \"startDate\": \"2025-10-15\",\n  \"endDate\": \"2025-10-20\",\n  \"assignee\": {\n    \"userId\": 2\n  },\n  \"reportTo\": {\n    \"userId\": 1\n  }\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "_ref_id": "req_mgqf5tq6_e17dc7e1-ed00-4c7f-a3b7-c82df43e560e"
+        },
+        {
+          "v": "16",
+          "endpoint": "http://localhost:8080/task/getAll",
+          "name": "Get All Task",
+          "params": [],
+          "headers": [],
+          "method": "GET",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "_ref_id": "req_mgqh9v6b_5aaad9c2-c21c-4ad7-af98-60c03e4eb3a0"
+        },
+        {
+          "v": "16",
+          "endpoint": "http://localhost:8080/task/delete/1",
+          "name": "Delete Task",
+          "params": [],
+          "headers": [],
+          "method": "DELETE",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "_ref_id": "req_mgqi76q7_e46deb25-0cfa-4c85-9fc2-8887a74add05"
+        },
+        {
+          "v": "16",
+          "endpoint": "http://localhost:8080/task/get/1",
+          "name": "Get Task",
+          "params": [],
+          "headers": [],
+          "method": "GET",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "_ref_id": "req_mgqil23a_7d79f3ce-0ceb-4f6a-a6c2-5994ca698d33"
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "variables": [],
+      "_ref_id": "coll_mgqinrlh_398df29d-a92b-41bf-bc30-7ac6b1c28627"
     }
   ],
   "requests": [],

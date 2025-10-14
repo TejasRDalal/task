@@ -1,0 +1,168 @@
+{
+  "v": 10,
+  "name": "Task management",
+  "folders": [
+    {
+      "v": 10,
+      "name": "Role",
+      "folders": [],
+      "requests": [
+        {
+          "v": "16",
+          "endpoint": "http://localhost:8080/roles/add",
+          "name": "Add Role",
+          "params": [],
+          "headers": [],
+          "method": "POST",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"roleName\":\"Developer\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "_ref_id": "req_mgqe9vkh_f95e99d8-6cf6-4249-b3d6-02f688a470ac"
+        },
+        {
+          "v": "16",
+          "endpoint": "http://localhost:8080/roles/getAll",
+          "name": "Get All Roles",
+          "params": [],
+          "headers": [],
+          "method": "GET",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "_ref_id": "req_mgqei4ks_53dad58b-6310-4fe4-b0c9-5dcf8d8e08f3"
+        },
+        {
+          "v": "16",
+          "endpoint": "http://localhost:8080/roles/delete/1",
+          "name": "Delete Role",
+          "params": [],
+          "headers": [],
+          "method": "DELETE",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "_ref_id": "req_mgqekq6e_545e33bd-b23e-4b78-8d15-a2d78ba972f4"
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "variables": [],
+      "_ref_id": "coll_mgqekc8c_70a2f591-496d-4286-a23e-6aee8af2fa3d"
+    },
+    {
+      "v": 10,
+      "name": "User",
+      "folders": [],
+      "requests": [
+        {
+          "v": "16",
+          "endpoint": "http://localhost:8080/users/add",
+          "name": "Add User",
+          "params": [],
+          "headers": [],
+          "method": "POST",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"firstName\":\"test\",\n  \"middleName\":\"test\",\n  \"lastName\":\"test\",\n  \"role\": {\n    \"roleId\": 1\n  }\n\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "_ref_id": "req_mgqf5tq6_e17dc7e1-ed00-4c7f-a3b7-c82df43e560e"
+        },
+        {
+          "v": "16",
+          "endpoint": "http://localhost:8080/users/getAll",
+          "name": "Get All Users",
+          "params": [],
+          "headers": [],
+          "method": "GET",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "_ref_id": "req_mgqh9v6b_5aaad9c2-c21c-4ad7-af98-60c03e4eb3a0"
+        },
+        {
+          "v": "16",
+          "endpoint": "http://localhost:8080/users/delete/1",
+          "name": "Delete User",
+          "params": [],
+          "headers": [],
+          "method": "DELETE",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "_ref_id": "req_mgqi76q7_e46deb25-0cfa-4c85-9fc2-8887a74add05"
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "variables": [],
+      "_ref_id": "coll_mgqf56m8_fe867803-16c8-4386-b302-257a353b95ff"
+    }
+  ],
+  "requests": [],
+  "headers": [],
+  "auth": {
+    "authType": "none",
+    "authActive": true
+  },
+  "variables": [],
+  "_ref_id": "coll_mgqe9mo0_c4de95b5-ce9a-49d7-915d-d7bbfb94ee15"
+}

@@ -90,6 +90,27 @@
           "requestVariables": [],
           "responses": {},
           "_ref_id": "req_mgqil23a_7d79f3ce-0ceb-4f6a-a6c2-5994ca698d33"
+        },
+        {
+          "v": "16",
+          "endpoint": "http://localhost:8080/roles/update",
+          "name": "Update Role",
+          "params": [],
+          "headers": [],
+          "method": "PUT",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"roleId\":1,\n  \"roleName\":\"Developer\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "_ref_id": "req_mgryrwxq_f1db1b05-361c-426f-bbae-41a08761a335"
         }
       ],
       "auth": {

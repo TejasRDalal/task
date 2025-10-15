@@ -37,4 +37,10 @@ public class RoleServiceImpl implements RoleService {
     public Optional<Role> getRoleById(Integer roleId) {
         return roleRepository.findById(roleId);
     }
+
+    @Override
+    @Transactional
+    public void updateRole(Role role) {
+        roleRepository.save(role);
+    }
 }

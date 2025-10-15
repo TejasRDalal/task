@@ -3,10 +3,14 @@ package com.taskmanager.task.controller;
 import com.taskmanager.task.pojo.Role;
 import com.taskmanager.task.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/roles")
 public class RoleController {
@@ -15,9 +19,21 @@ public class RoleController {
     private RoleService roleService;
 
     @PostMapping("/add")
-    public String addRole(@RequestBody Role role) {
+    public ResponseEntity<Map<String, String>> addRole(@RequestBody Role role) {
         roleService.addRole(role);
-        return "Role added successfully";
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Role added successfully");
+        return ResponseEntity.ok(response);
+
+    }
+
+    @PutMapping("/update")
+    public ResponseEntity<Map<String, String>> updateRole(@RequestBody Role role) {
+        roleService.addRole(role);
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Role updated successfully");
+        return ResponseEntity.ok(response);
+
     }
 
     @GetMapping("/getAll")

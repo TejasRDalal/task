@@ -3,6 +3,7 @@ package com.taskmanager.task.service.impl;
 import com.taskmanager.task.pojo.Role;
 import com.taskmanager.task.repositories.RoleRepository;
 import com.taskmanager.task.service.RoleService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,14 +22,15 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
+    @Transactional
     public void deleteRole(Integer roleId) {
-        roleRepository.deleteById(roleId);
+        roleRepository.updateRole(roleId);
 
     }
 
     @Override
     public List<Role> getAllRoles() {
-       return roleRepository.findAll();
+       return roleRepository.findByFlagTrue();
     }
 
     @Override

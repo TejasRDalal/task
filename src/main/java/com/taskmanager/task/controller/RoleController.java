@@ -29,6 +29,7 @@ public class RoleController {
 
     @PutMapping("/update")
     public ResponseEntity<Map<String, String>> updateRole(@RequestBody Role role) {
+        System.out.println("Update Request: "+role.toString());
         roleService.addRole(role);
         Map<String, String> response = new HashMap<>();
         response.put("message", "Role updated successfully");
@@ -42,9 +43,11 @@ public class RoleController {
     }
 
     @DeleteMapping("/delete/{roleId}")
-    public String deleteRole(@PathVariable Integer roleId) {
+    public ResponseEntity<Map<String, String>> deleteRole(@PathVariable Integer roleId) {
         roleService.deleteRole(roleId);
-        return "Role deleted successfully";
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Role deleted successfully");
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/get/{roleId}")

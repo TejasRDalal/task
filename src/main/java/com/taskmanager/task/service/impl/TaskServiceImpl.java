@@ -22,7 +22,7 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public void deleteTask(Integer taskId) {
-        taskRepository.deleteById(taskId);
+        taskRepository.deleteTask(taskId);
     }
 
     @Override
@@ -32,6 +32,6 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public List<Task> getAllTasks() {
-        return taskRepository.findAll();
+        return taskRepository.findByFlagTrue();
     }
 }

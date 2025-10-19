@@ -209,6 +209,27 @@
           "requestVariables": [],
           "responses": {},
           "_ref_id": "req_mgqil23a_7d79f3ce-0ceb-4f6a-a6c2-5994ca698d33"
+        },
+        {
+          "v": "16",
+          "endpoint": "http://localhost:8080/users/update",
+          "name": "Update User",
+          "params": [],
+          "headers": [],
+          "method": "PUT",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"userId\":1,\n  \"firstName\":\"Sukhad\",\n  \"middleName\":\"K\",\n  \"lastName\":\"Kulkarni\",\n  \"role\": {\n    \"id\": 1\n  }\n\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "_ref_id": "req_mgxoe6t8_306dab43-7234-400d-8422-022fd33ac001"
         }
       ],
       "auth": {

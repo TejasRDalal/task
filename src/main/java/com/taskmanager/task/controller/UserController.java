@@ -26,7 +26,7 @@ public class UserController {
         return ResponseEntity.ok(response);
     }
 
-    @PostMapping("/update")
+    @PutMapping("/update")
     public ResponseEntity<Map<String, String>> updateUser(@RequestBody Users users) {
         userService.addUser(users);
         Map<String, String> response = new HashMap<>();

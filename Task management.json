@@ -9,17 +9,17 @@
       "requests": [
         {
           "v": "16",
-          "endpoint": "http://localhost:8080/roles/add",
           "name": "Add Role",
+          "method": "POST",
+          "endpoint": "http://localhost:8080/roles/add",
           "params": [],
           "headers": [],
-          "method": "POST",
+          "preRequestScript": "",
+          "testScript": "",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "preRequestScript": "",
-          "testScript": "",
           "body": {
             "contentType": "application/json",
             "body": "{\n  \"roleName\":\"Developer\"\n}"
@@ -30,17 +30,17 @@
         },
         {
           "v": "16",
-          "endpoint": "http://localhost:8080/roles/getAll",
           "name": "Get All Roles",
+          "method": "GET",
+          "endpoint": "http://localhost:8080/roles/getAll",
           "params": [],
           "headers": [],
-          "method": "GET",
+          "preRequestScript": "",
+          "testScript": "",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "preRequestScript": "",
-          "testScript": "",
           "body": {
             "contentType": null,
             "body": null
@@ -51,17 +51,17 @@
         },
         {
           "v": "16",
-          "endpoint": "http://localhost:8080/roles/delete/1",
           "name": "Delete Role",
+          "method": "DELETE",
+          "endpoint": "http://localhost:8080/roles/delete/1",
           "params": [],
           "headers": [],
-          "method": "DELETE",
+          "preRequestScript": "",
+          "testScript": "",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "preRequestScript": "",
-          "testScript": "",
           "body": {
             "contentType": null,
             "body": null
@@ -72,17 +72,17 @@
         },
         {
           "v": "16",
-          "endpoint": "http://localhost:8080/roles/get/1",
           "name": "Get Role",
+          "method": "GET",
+          "endpoint": "http://localhost:8080/roles/get/1",
           "params": [],
           "headers": [],
-          "method": "GET",
+          "preRequestScript": "",
+          "testScript": "",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "preRequestScript": "",
-          "testScript": "",
           "body": {
             "contentType": null,
             "body": null
@@ -93,17 +93,17 @@
         },
         {
           "v": "16",
-          "endpoint": "http://localhost:8080/roles/update",
           "name": "Update Role",
+          "method": "PUT",
+          "endpoint": "http://localhost:8080/roles/update",
           "params": [],
           "headers": [],
-          "method": "PUT",
+          "preRequestScript": "",
+          "testScript": "",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "preRequestScript": "",
-          "testScript": "",
           "body": {
             "contentType": "application/json",
             "body": "{\n  \"roleId\":1,\n  \"roleName\":\"Developer\"\n}"
@@ -128,20 +128,20 @@
       "requests": [
         {
           "v": "16",
-          "endpoint": "http://localhost:8080/users/add",
           "name": "Add User",
+          "method": "POST",
+          "endpoint": "http://localhost:8080/users/add",
           "params": [],
           "headers": [],
-          "method": "POST",
+          "preRequestScript": "",
+          "testScript": "",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "preRequestScript": "",
-          "testScript": "",
           "body": {
             "contentType": "application/json",
-            "body": "{\n  \"firstName\":\"test\",\n  \"middleName\":\"test\",\n  \"lastName\":\"test\",\n  \"role\": {\n    \"roleId\": 1\n  }\n\n}"
+            "body": "{\n  \"firstName\":\"Sukhad\",\n  \"middleName\":\"K\",\n  \"lastName\":\"Kulkarni\",\n  \"role\": {\n    \"id\": 2\n  }\n\n}"
           },
           "requestVariables": [],
           "responses": {},
@@ -149,17 +149,17 @@
         },
         {
           "v": "16",
-          "endpoint": "http://localhost:8080/users/getAll",
           "name": "Get All Users",
+          "method": "GET",
+          "endpoint": "http://localhost:8080/users/getAll",
           "params": [],
           "headers": [],
-          "method": "GET",
+          "preRequestScript": "",
+          "testScript": "",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "preRequestScript": "",
-          "testScript": "",
           "body": {
             "contentType": null,
             "body": null
@@ -170,17 +170,17 @@
         },
         {
           "v": "16",
-          "endpoint": "http://localhost:8080/users/delete/1",
           "name": "Delete User",
+          "method": "DELETE",
+          "endpoint": "http://localhost:8080/users/delete/1",
           "params": [],
           "headers": [],
-          "method": "DELETE",
+          "preRequestScript": "",
+          "testScript": "",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "preRequestScript": "",
-          "testScript": "",
           "body": {
             "contentType": null,
             "body": null
@@ -191,17 +191,17 @@
         },
         {
           "v": "16",
-          "endpoint": "http://localhost:8080/users/get/1",
           "name": "Get User",
+          "method": "GET",
+          "endpoint": "http://localhost:8080/users/get/1",
           "params": [],
           "headers": [],
-          "method": "GET",
+          "preRequestScript": "",
+          "testScript": "",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "preRequestScript": "",
-          "testScript": "",
           "body": {
             "contentType": null,
             "body": null
@@ -209,6 +209,27 @@
           "requestVariables": [],
           "responses": {},
           "_ref_id": "req_mgqil23a_7d79f3ce-0ceb-4f6a-a6c2-5994ca698d33"
+        },
+        {
+          "v": "16",
+          "endpoint": "http://localhost:8080/users/update",
+          "name": "Update User",
+          "params": [],
+          "headers": [],
+          "method": "PUT",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"userId\":1,\n  \"firstName\":\"Sukhad\",\n  \"middleName\":\"K\",\n  \"lastName\":\"Kulkarni\",\n  \"role\": {\n    \"id\": 1\n  }\n\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "_ref_id": "req_mgxoe6t8_306dab43-7234-400d-8422-022fd33ac001"
         }
       ],
       "auth": {
@@ -226,17 +247,17 @@
       "requests": [
         {
           "v": "16",
-          "endpoint": "http://localhost:8080/task/add",
           "name": "Add Task",
+          "method": "POST",
+          "endpoint": "http://localhost:8080/task/add",
           "params": [],
           "headers": [],
-          "method": "POST",
+          "preRequestScript": "",
+          "testScript": "",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "preRequestScript": "",
-          "testScript": "",
           "body": {
             "contentType": "application/json",
             "body": "{\n  \"name\": \"Design Landing Page\",\n  \"description\": \"Create a responsive landing page for the new product launch.\",\n  \"startDate\": \"2025-10-15\",\n  \"endDate\": \"2025-10-20\",\n  \"assignee\": {\n    \"userId\": 2\n  },\n  \"reportTo\": {\n    \"userId\": 1\n  }\n}"
@@ -247,17 +268,17 @@
         },
         {
           "v": "16",
-          "endpoint": "http://localhost:8080/task/getAll",
           "name": "Get All Task",
+          "method": "GET",
+          "endpoint": "http://localhost:8080/task/getAll",
           "params": [],
           "headers": [],
-          "method": "GET",
+          "preRequestScript": "",
+          "testScript": "",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "preRequestScript": "",
-          "testScript": "",
           "body": {
             "contentType": null,
             "body": null
@@ -268,17 +289,17 @@
         },
         {
           "v": "16",
-          "endpoint": "http://localhost:8080/task/delete/1",
           "name": "Delete Task",
+          "method": "DELETE",
+          "endpoint": "http://localhost:8080/task/delete/1",
           "params": [],
           "headers": [],
-          "method": "DELETE",
+          "preRequestScript": "",
+          "testScript": "",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "preRequestScript": "",
-          "testScript": "",
           "body": {
             "contentType": null,
             "body": null
@@ -289,17 +310,17 @@
         },
         {
           "v": "16",
-          "endpoint": "http://localhost:8080/task/get/1",
           "name": "Get Task",
+          "method": "GET",
+          "endpoint": "http://localhost:8080/task/get/1",
           "params": [],
           "headers": [],
-          "method": "GET",
+          "preRequestScript": "",
+          "testScript": "",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "preRequestScript": "",
-          "testScript": "",
           "body": {
             "contentType": null,
             "body": null
@@ -319,11 +340,11 @@
     }
   ],
   "requests": [],
-  "headers": [],
   "auth": {
     "authType": "none",
     "authActive": true
   },
+  "headers": [],
   "variables": [],
   "_ref_id": "coll_mgqe9mo0_c4de95b5-ce9a-49d7-915d-d7bbfb94ee15"
 }

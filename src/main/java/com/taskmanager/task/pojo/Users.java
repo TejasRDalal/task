@@ -17,7 +17,7 @@ public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userId;
+    private Long userId;
 
     @Column(nullable = false)
     private String firstName;
@@ -26,6 +26,9 @@ public class Users {
 
     @Column(nullable = false)
     private String lastName;
+
+    @Column(nullable = false)
+    private String email;
 
     @ManyToOne
     @JoinColumn(name = "role_id")
@@ -41,6 +44,14 @@ public class Users {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    // Not persisted to users table; only transient carrier for registration/login flows
+    @Transient
+    private String username;
+
+    @Transient
+    private String password;
+
 
     @Override
     public String toString() {

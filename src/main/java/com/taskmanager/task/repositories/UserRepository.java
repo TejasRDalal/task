@@ -10,10 +10,12 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface UserRepository extends JpaRepository<Users, Integer> {
+public interface UserRepository extends JpaRepository<Users, Long> {
     List<Users> findByFlagTrue();
 
     @Modifying
     @Query("UPDATE Users t SET t.flag = false WHERE t.userId = :id")
-    void deleteUser(@Param("id") Integer id);
+    void deleteUser(@Param("id") Long id);
+
+    Users findByUserId(Long id);
 }

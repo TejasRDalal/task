@@ -141,7 +141,7 @@
           },
           "body": {
             "contentType": "application/json",
-            "body": "{\n  \"firstName\":\"Sukhad\",\n  \"middleName\":\"K\",\n  \"lastName\":\"Kulkarni\",\n  \"role\": {\n    \"id\": 2\n  }\n\n}"
+            "body": "{\n  \"firstName\":\"Tejas\",\n  \"middleName\":\"Raghunandan\",\n  \"lastName\":\"Dalal\",\n  \"username\":\"Tejas\",\n  \"password\":\"Dalal\",\n  \"email\":\"tejas@gmail.com\",\n  \"role\": {\n    \"id\": 1\n  }\n\n}"
           },
           "requestVariables": [],
           "responses": {},
@@ -212,17 +212,17 @@
         },
         {
           "v": "16",
-          "endpoint": "http://localhost:8080/users/update",
           "name": "Update User",
+          "method": "PUT",
+          "endpoint": "http://localhost:8080/users/update",
           "params": [],
           "headers": [],
-          "method": "PUT",
+          "preRequestScript": "",
+          "testScript": "",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "preRequestScript": "",
-          "testScript": "",
           "body": {
             "contentType": "application/json",
             "body": "{\n  \"userId\":1,\n  \"firstName\":\"Sukhad\",\n  \"middleName\":\"K\",\n  \"lastName\":\"Kulkarni\",\n  \"role\": {\n    \"id\": 1\n  }\n\n}"
@@ -328,6 +328,27 @@
           "requestVariables": [],
           "responses": {},
           "_ref_id": "req_mgqil23a_7d79f3ce-0ceb-4f6a-a6c2-5994ca698d33"
+        },
+        {
+          "v": "16",
+          "name": "Update Task",
+          "method": "PUT",
+          "endpoint": "http://localhost:8080/task/update",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"taskId\":1,\n  \"name\": \"Design Landing Page\",\n  \"description\": \"Create a responsive landing page for the new product launch.\",\n  \"startDate\": \"2025-10-15\",\n  \"endDate\": \"2025-10-20\",\n  \"assignee\": {\n    \"userId\": 2\n  },\n  \"reportTo\": {\n    \"userId\": 1\n  }\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "_ref_id": "req_mgysrehq_6a83b846-90af-4fed-90e1-ed47e014ab3d"
         }
       ],
       "auth": {
@@ -337,6 +358,41 @@
       "headers": [],
       "variables": [],
       "_ref_id": "coll_mgqinrlh_398df29d-a92b-41bf-bc30-7ac6b1c28627"
+    },
+    {
+      "v": 10,
+      "name": "Login",
+      "folders": [],
+      "requests": [
+        {
+          "v": "16",
+          "name": "Login",
+          "method": "POST",
+          "endpoint": "http://localhost:8080/users/login",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"username\":\"Tejas\",\n  \"password\":\"Dalal\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "_ref_id": "req_mh4pdlc4_1e03dfdd-bd77-4001-9da7-8f67ed4c7f5f"
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "variables": [],
+      "_ref_id": "coll_mh4pd3he_954520c2-bc6b-4333-b2f5-49294552ac0b"
     }
   ],
   "requests": [],

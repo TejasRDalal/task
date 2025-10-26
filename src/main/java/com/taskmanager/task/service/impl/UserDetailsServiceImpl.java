@@ -4,10 +4,9 @@ import com.taskmanager.task.pojo.AuthCredentials;
 import com.taskmanager.task.pojo.Users;
 import com.taskmanager.task.repositories.AuthCredentialsRepository;
 import com.taskmanager.task.repositories.UserRepository;
-import com.taskmanager.task.service.UserDetailsService;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +28,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + username)));
 
         Users user = userRepository.findByUserId(authCredentials.get().getUser().getUserId());
+        user.setPassword(authCredentials.get().getPassword());
+        user.setUsername(authCredentials.get().getUsername());
 
-        return com.taskmanager.task.service.impl.UserDetailsService.build(user);
+        return com.taskmanager.task.service.impl.CustomUserDetails.build(user);
     }
 }

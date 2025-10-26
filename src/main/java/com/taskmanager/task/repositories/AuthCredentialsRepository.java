@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface AuthCredentialsRepository extends JpaRepository<AuthCredentials, Integer> {
@@ -14,5 +15,6 @@ public interface AuthCredentialsRepository extends JpaRepository<AuthCredentials
     @Modifying
     @Query("UPDATE AuthCredentials t SET t.flag = false WHERE t.user.userId = :id")
     int deleteUserCredentials(@Param("id") Integer id);
+    List<AuthCredentials> findAll();
 
 }

@@ -1,18 +1,11 @@
 package com.taskmanager.task.controller;
 
 import com.taskmanager.task.pojo.AuthCredentials;
-import com.taskmanager.task.pojo.AuthResponse;
 import com.taskmanager.task.pojo.Users;
-import com.taskmanager.task.security.jwt.JwtUtils;
-import com.taskmanager.task.service.UserDetailsService;
 import com.taskmanager.task.service.UserService;
-import lombok.extern.slf4j.Slf4j;
+import com.taskmanager.task.service.impl.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -27,27 +20,19 @@ public class UserController {
     private UserService userService;
 
     @Autowired
-    private AuthenticationManager authenticationManager;
-
-    @Autowired
-    private JwtUtils jwtUtil;
-
-    @Autowired
-    private UserDetailsService userDetailsService;
+    private AuthenticationService authService;
 
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody AuthCredentials req) {
 
-        try{
-            authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(req.getUsername(), req.getPassword()));
-            UserDetails userDetails = userDetailsService.loadUserByUsername(req.getUsername());
-            String jwt = jwtUtil.generateTokenFromUsername(userDetails.getUsername());
-            return new ResponseEntity<>(jwt, HttpStatus.OK);
-        }catch (Exception e){
-            return new ResponseEntity<>("Incorrect username or password", HttpStatus.BAD_REQUEST);
-        }
+        return ResponseEntity.ok(authService.authenticate(req));
+    }
+
+    @GetMapping("/getPassword")
+    public ResponseEntity<?> getAllPasswords() {
+
+        return ResponseEntity.ok(authService.getAllPassword());
     }
 
     @PostMapping("/add")

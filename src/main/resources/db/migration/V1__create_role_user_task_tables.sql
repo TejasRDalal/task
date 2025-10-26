@@ -9,7 +9,7 @@ CREATE TABLE role (
 
 -- Create User table
 CREATE TABLE users (
-  user_id INT PRIMARY KEY AUTO_INCREMENT,
+  user_id LONG PRIMARY KEY AUTO_INCREMENT,
   first_name VARCHAR(100) NOT NULL,
   middle_name VARCHAR(100),
   last_name VARCHAR(100) NOT NULL,
@@ -48,4 +48,13 @@ CREATE TABLE auth_credentials (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   CONSTRAINT uq_auth_credentials_username UNIQUE (username),
   CONSTRAINT fk_auth_credentials_user FOREIGN KEY (userId) REFERENCES users(user_id)
+);
+
+CREATE TABLE token (
+    id LONG PRIMARY KEY AUTO_INCREMENT,
+    access_token VARCHAR(255) NOT NULL,
+    refresh_token VARCHAR(255) NOT NULL,
+    is_logged_out BOOLEAN NOT NULL,
+    user_id LONG,
+    CONSTRAINT fk_token_user FOREIGN KEY (user_id) REFERENCES users(user_id)
 );

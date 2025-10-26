@@ -12,8 +12,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-@Data
-public class UserDetailsService implements UserDetails {
+
+
+public class CustomUserDetails implements UserDetails {
 
     private static final long serialVersionUID = 1L;
 
@@ -28,8 +29,8 @@ public class UserDetailsService implements UserDetails {
 
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsService(Long id, String username, String email, String password,
-                              Collection<? extends GrantedAuthority> authorities) {
+    public CustomUserDetails(Long id, String username, String email, String password,
+                             Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.username = username;
         this.email = email;
@@ -37,12 +38,12 @@ public class UserDetailsService implements UserDetails {
         this.authorities = authorities;
     }
 
-    public static UserDetailsService build(Users user) {
+    public static CustomUserDetails build(Users user) {
         List<GrantedAuthority> authorities = Collections.singletonList(
                 new SimpleGrantedAuthority(user.getRole().getRoleName()) // assuming getName() returns "ROLE_ADMIN"
         );
 
-        return new UserDetailsService(
+        return new CustomUserDetails(
                 user.getUserId(),
                 user.getUsername(),
                 user.getEmail(),
@@ -57,21 +58,39 @@ public class UserDetailsService implements UserDetails {
 
     @Override
     public String getPassword() {
-        return "";
+        return this.password;
     }
 
     @Override
     public String getUsername() {
-        return "";
+        return this.username;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null || getClass() != o.getClass())
-            return false;
-        UserDetailsService user = (UserDetailsService) o;
-        return Objects.equals(id, user.id);
+        if (this == o) return true;
+        if (!(o instanceof CustomUserDetails)) return false;
+        CustomUserDetails that = (CustomUserDetails) o;
+        return Objects.equals(id, that.id);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

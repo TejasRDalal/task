@@ -5,7 +5,6 @@ import com.taskmanager.task.pojo.Users;
 import com.taskmanager.task.repositories.AuthCredentialsRepository;
 import com.taskmanager.task.repositories.RoleRepository;
 import com.taskmanager.task.repositories.UserRepository;
-import com.taskmanager.task.security.jwt.JwtUtils;
 import com.taskmanager.task.service.UserService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<Users, Long> {
@@ -18,4 +19,5 @@ public interface UserRepository extends JpaRepository<Users, Long> {
     void deleteUser(@Param("id") Long id);
 
     Users findByUserId(Long id);
+
 }
